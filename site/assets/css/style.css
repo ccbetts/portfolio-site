@@ -1,0 +1,266 @@
+/*
+FOR REFERENCE: Shades of gray used by Bootstrap 4
+
+gray-dark:                 #292b2c
+gray:                      #464a4c
+gray-light:                #636c72
+gray-lighter:              #eceeef
+gray-lightest:             #f7f7f9
+
+*/
+
+
+
+/*
+Bootstrap 4 Direct Overrides
+*/
+
+body {
+  font-family: "WeblySleek UI", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.btn-group-lg > .btn, .btn-lg {
+  border-radius: 0.25rem;
+}
+
+
+/*
+Fix for Bootstrap 4 [.navbar > .container] element alignment bug
+that occurs at extra small screen sizes
+*/
+@media (max-width: 576px) {
+  .navbar > .container {
+      margin-left: 0;
+      margin-right: 0;
+  }
+}
+
+
+/*
+CSS styling for ScrollPos-Styler
+
+See: https://github.com/acch/scrollpos-styler
+*/
+
+.sps {
+  transition: all 0.3s ease;
+}
+
+.sps--blw {
+  background-color: rgba(0, 0, 0, 0.85);
+}
+
+.sps--abv {
+  background-color: inherit;
+}
+
+@media screen and (min-width: 768px) {
+  .sps--abv .navbar-brand {
+    font-size: 1.75em;
+  }
+}
+
+.sps .navbar-brand {
+  transition: all 0.3s ease;
+}
+
+
+/*
+Workaround to prevent jump link targets from being
+covered up by the top bar
+*/
+.main-section {
+  margin-top: -2rem;
+  padding-top: calc(3rem + 2rem);
+  /* Could have just used 5rem above, but wanted to show that
+  the 2rem part specifically offsets the margin-top */
+}
+
+
+/*
+Bootstrap component additions
+*/
+
+.btn {
+  box-shadow: 8px 10px 20px 0px rgba(46, 61, 73, 0.15);
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  box-shadow: 2px 4px 8px 0px rgba(46, 61, 73, 0.2);
+}
+
+.card {
+  border: 0;
+  box-shadow: 12px 15px 20px 0px rgba(46, 61, 73, 0.15);
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.card-header,
+.card-footer {
+  border-top: 0;
+}
+
+.col,
+[class|="col"] {
+  margin-bottom: 3em;
+}
+
+
+/*
+Logo Text
+*/
+
+.site-logo {
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.site-logo:after {
+  content: "Chris Betts";
+}
+
+/*
+Hero Unit
+*/
+
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.80), rgba(0, 0, 0, 0.75)), url(../images/backgrounds/bibimbap.jpg)
+    center center / cover
+    no-repeat
+    fixed;
+  box-shadow: 0px 15px 20px 0px rgba(46, 61, 73, 0.15);
+}
+
+@media screen and (resolution: 1.25dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/backgrounds/bibimbap-1.25x.jpg);
+  }
+}
+
+@media screen and (resolution: 1.5dppx) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/backgrounds/bibimbap-1.5x.jpg);
+  }
+}
+
+@media screen and (min-resolution: 2dppx) and (max-width: 768px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/backgrounds/bibimbap.jpg);
+  }
+}
+
+@media screen and (min-resolution: 3dppx) and (max-width: 768px) {
+  .hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../images/backgrounds/bibimbap-1.25x.jpg);
+  }
+}
+
+.hero-container {
+  height: 100%;
+}
+
+.hero-row {
+  height: 100%;
+}
+
+/* Hero title text */
+.intro-title {
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 768px) {
+  .intro-title {
+    font-size: 3.5rem;
+  }  
+}
+
+@media screen and (min-width: 992px) {
+  .intro-title {
+    font-size: 4.5rem;
+  }  
+}
+
+
+/*
+Font Awesome extensions with the GitHub logo
+*/
+
+.fa-github-prepend:before,
+.fa-github-append:after {
+  font: normal normal normal 14px/1 FontAwesome;
+  content:"\f09b";
+}
+
+.fa-github-prepend:before {
+  padding-right: 0.5em;
+}
+
+.fa-github-append:after {
+  padding-left: 0.5em;
+}
+
+
+/*
+Footer
+*/
+
+.list-group-item-action.social-link {
+  background-color: transparent;
+  color: #eceeef;
+  border-color: #464a4c;
+}
+
+.list-group-item-action.social-link:active,
+.list-group-item-action.social-link:focus,
+.list-group-item-action.social-link:hover {
+  color: #636c72;
+}
+
+.social-link:after {
+  margin-left: 0.5em;
+  content: attr(title);
+}
+
+.copyright {
+  display: block;
+}
+
+@media screen and (max-width: 767px) {
+  .copyright {
+    margin-top: 3em;
+  }
+}
+
+
+/*
+Utility Classes
+*/
+
+.hidden-from-all {
+  display: none;
+}
+
+/* Extensions of Bootstrap 4's display headings */
+.display-5,
+.display-6,
+.display-7 {
+  font-weight: 300;
+}
+
+.display-5 {
+  font-size: 3rem;
+}
+
+.display-6 {
+  font-size: 2.5rem;
+}
+
+.display-7 {
+  font-size: 2rem;
+}
